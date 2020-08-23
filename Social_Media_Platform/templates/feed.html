@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title> Viraly | Feed</title>
+        <link rel="icon" type="image/png" href="static/assets/img/favicon.png" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:600,700,800,900" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+        <!-- <link href="https://cdn.jsdelivr.net/npm/fontisto@v3.0.4/css/fontisto/fontisto-brands.min.css" rel="stylesheet"> -->
+        <link rel="stylesheet" href="static/assets/css/bulma.css">
+        <link rel="stylesheet" href="static/assets/css/app.css">
+        <link rel="stylesheet" href="static/assets/css/core.css">
+        <style>
+            .tabs ul {
+                background-color: #fcfcfc;
+                border-bottom-color: #fcfcfc;
+                border-bottom-style: none;
+                border-bottom-width: 0px;
+            }
+            .tabs.is-boxed li.is-active a { border-color: #fff; }
+            .blur_img{
+                filter: blur(0.7rem);
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- Pageloader -->
+        <div class="pageloader"></div>
+        <div class="infraloader is-active"></div>
+        <div class="app-overlay"></div>
+
+        <div id="main-navbar" class="navbar is-inline-flex is-transparent no-shadow is-hidden-mobile">
+            <div class="container is-fluid">
+                <div class="navbar-brand">
+                    <a href="/" class="navbar-item">
+                        <img src="static/assets/img/favicon.png" width="112" height="28" alt="">
+                    </a>
+                </div>
+                <div class="navbar-menu">
+                    <div class="navbar-start">
+                        <!-- Navbar Search -->
+                        <div class="navbar-item is-icon open-chat">
+                            <a class="icon-link is-primary" href="messages?toUser=Support">
+                                <i data-feather="message-square"></i>
+                                <span class="indicator"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="navbar-end">
+
+                        <div id="account-dropdown" class="navbar-item is-account drop-trigger has-caret">
+                            <div class="user-image">
+                                <img src="https://ui-avatars.com/api/?color=fff&background={{ fromUser_color }}&name={{ fromUser }}=36&format=svg" alt="">
+                                <span class="indicator"></span>
+                            </div>
+
+                            <div class="nav-drop is-account-dropdown">
+                                <div class="inner">
+                                    <div class="nav-drop-header">
+                                        <span class="username">{{ fullname }}</span>
+                                    </div>
+                                    <div class="nav-drop-body account-items">
+                                        <a id="profile-link" href="profile-main.html" class="account-item">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    <div class="image">
+                                                        <img src="https://ui-avatars.com/api/?color=fff&background={{ fromUser_color }}&name={{ fromUser }}=36&format=svg" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="media-content">
+                                                    <h3>{{ fullname }}</h3>
+                                                    <small>@{{ fromUser }}</small>
+                                                </div>
+                                                <div class="media-right">
+                                                    <i data-feather="check"></i>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <hr class="account-divider">
+                                        <a class="account-item">
+                                            <div class="media">
+                                                <div class="icon-wrap">
+                                                    <i data-feather="power"></i>
+                                                </div>
+                                                <div class="media-content">
+                                                    <h3>Log out</h3>
+                                                    <small>Log out from your account.</small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <nav class="navbar mobile-navbar is-hidden-desktop" aria-label="main navigation">
+            <!-- Brand -->
+            <div class="navbar-brand">
+                <a class="navbar-item" href="index.html">
+                    <img src="static/assets/img/favicon.png" alt="">
+                </a>
+
+                <div class="navbar-item is-icon open-chat">
+                    <a class="icon-link is-primary" href="messages?toUser=chatbot">
+                        <i data-feather="message-square"></i>
+                        <span class="indicator"></span>
+                    </a>
+                </div>
+
+
+                <!-- Mobile menu toggler icon -->
+                <div class="navbar-burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <!-- Navbar mobile menu -->
+            <div class="navbar-menu">
+                <!-- Account -->
+                <div class="navbar-item has-dropdown is-active">
+                    <div class="navbar-link">
+                        <img src="https://ui-avatars.com/api/?color=fff&background={{ fromUser_color }}&name={{ fromUser }}=36&format=svg" alt="">
+                        <span class="is-heading">{{ fullname }}</span>
+                    </div>
+
+                    <!-- Mobile Dropdown -->
+                    <div class="navbar-dropdown">
+                        <a href="#" class="navbar-item is-flex is-mobile-icon">
+                            <span><i data-feather="hexagon"></i>Logout</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="view-wrapper">
+
+            <!-- Container -->
+            <div id="main-feed" class="container">
+
+                <!-- Content placeholders at page load -->
+                <!-- this holds the animated content placeholders that show up before content -->
+                <div id="shadow-dom" class="view-wrap">
+                    <div class="columns">
+                        <div class="column is-3">
+                            <!-- Placeload element -->
+                            <div class="placeload weather-widget-placeload">
+                                <div class="header">
+                                    <div class="inner-wrap">
+                                        <div class="img loads"></div>
+                                        <div class="content-shape loads"></div>
+                                        <div class="content-shape loads"></div>
+                                    </div>
+                                </div>
+                                <div class="body">
+                                    <div class="inner-wrap">
+                                        <div class="rect loads"></div>
+                                        <div class="content-shape loads"></div>
+                                        <div class="content-shape loads"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="column is-6">
+
+                            <!-- Placeload element -->
+                            <div class="placeload compose-placeload">
+                                <div class="header">
+                                    <div class="content-shape is-lg loads"></div>
+                                    <div class="content-shape is-lg loads"></div>
+                                    <div class="content-shape is-lg loads"></div>
+                                </div>
+                                <div class="body">
+                                    <div class="img loads"></div>
+                                    <div class="inner-wrap">
+                                        <div class="content-shape loads"></div>
+                                        <div class="content-shape loads"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Placeload element -->
+                            <div class="placeload post-placeload">
+                                <div class="header">
+                                    <div class="img loads"></div>
+                                    <div class="header-content">
+                                        <div class="content-shape loads"></div>
+                                        <div class="content-shape loads"></div>
+                                    </div>
+                                </div>
+                                <div class="image-placeholder loads"></div>
+                                <div class="placeholder-footer">
+                                    <div class="footer-block">
+                                        <div class="img loads"></div>
+                                        <div class="inner-wrap">
+                                            <div class="content-shape loads"></div>
+                                            <div class="content-shape loads"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Placeload element -->
+                            <div class="placeload post-placeload">
+                                <div class="header">
+                                    <div class="img loads"></div>
+                                    <div class="header-content">
+                                        <div class="content-shape loads"></div>
+                                        <div class="content-shape loads"></div>
+                                    </div>
+                                </div>
+                                <div class="image-placeholder loads"></div>
+                                <div class="placeholder-footer">
+                                    <div class="footer-block">
+                                        <div class="img loads"></div>
+                                        <div class="inner-wrap">
+                                            <div class="content-shape loads"></div>
+                                            <div class="content-shape loads"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Placeload element -->
+                            <div class="placeload post-placeload">
+                                <div class="header">
+                                    <div class="img loads"></div>
+                                    <div class="header-content">
+                                        <div class="content-shape loads"></div>
+                                        <div class="content-shape loads"></div>
+                                    </div>
+                                </div>
+                                <div class="image-placeholder loads"></div>
+                                <div class="placeholder-footer">
+                                    <div class="footer-block">
+                                        <div class="img loads"></div>
+                                        <div class="inner-wrap">
+                                            <div class="content-shape loads"></div>
+                                            <div class="content-shape loads"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Placeload element -->
+                            <div class="placeload post-placeload">
+                                <div class="header">
+                                    <div class="img loads"></div>
+                                    <div class="header-content">
+                                        <div class="content-shape loads"></div>
+                                        <div class="content-shape loads"></div>
+                                    </div>
+                                </div>
+                                <div class="image-placeholder loads"></div>
+                                <div class="placeholder-footer">
+                                    <div class="footer-block">
+                                        <div class="img loads"></div>
+                                        <div class="inner-wrap">
+                                            <div class="content-shape loads"></div>
+                                            <div class="content-shape loads"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="column is-3">
+
+                            <!-- Placeload element -->
+                            <div class="placeload stories-placeload">
+                                <div class="header">
+                                    <div class="content-shape loads"></div>
+                                </div>
+                                <div class="body">
+                                    <div class="flex-block">
+                                        <div class="img loads"></div>
+                                        <div class="inner-wrap">
+                                            <div class="content-shape loads"></div>
+                                            <div class="content-shape loads"></div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-block">
+                                        <div class="img loads"></div>
+                                        <div class="inner-wrap">
+                                            <div class="content-shape loads"></div>
+                                            <div class="content-shape loads"></div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-block">
+                                        <div class="img loads"></div>
+                                        <div class="inner-wrap">
+                                            <div class="content-shape loads"></div>
+                                            <div class="content-shape loads"></div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-block">
+                                        <div class="img loads"></div>
+                                        <div class="inner-wrap">
+                                            <div class="content-shape loads"></div>
+                                            <div class="content-shape loads"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Feed page main wrapper -->
+                <div id="activity-feed" class="view-wrap true-dom is-hidden">
+                    <div class="columns">
+                        <!-- Left side column -->
+                        <div class="column is-3 is-hidden-mobile">
+                            <!-- Weather widget -->
+                            <div class="card is-weather-card has-background-image" data-background="static/assets/img/illustrations/cards/weather-bg.svg">
+                                <div class="card-heading">
+                                </div>
+                                <div class="card-body">
+                                    <div class="temperature">
+                                        <span>28</span>
+                                    </div>
+                                    <div class="weather-icon">
+                                        <div>
+                                            <i data-feather="sun"></i>
+                                            <h4>Sunny</h4>
+                                            <div class="details">
+                                                <span>Real Feel: 27° </span>
+                                                <span>Rain Chance: 5%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="previsions">
+                                        <div class="day">
+                                            <span>Mon</span>
+                                            <i data-feather="sun"></i>
+                                            <span>29°</span>
+                                        </div>
+                                        <div class="day">
+                                            <span>Tue</span>
+                                            <i data-feather="cloud-lightning"></i>
+                                            <span>31°</span>
+                                        </div>
+                                        <div class="day">
+                                            <span>Wed</span>
+                                            <i data-feather="cloud-lightning"></i>
+                                            <span>33°</span>
+                                        </div>
+                                        <div class="day">
+                                            <span>Thu</span>
+                                            <i data-feather="sun"></i>
+                                            <span>28°</span>
+                                        </div>
+                                        <div class="day">
+                                            <span>Fri</span>
+                                            <i data-feather="cloud-drizzle"></i>
+                                            <span>29°</span>
+                                        </div>
+                                        <div class="day">
+                                            <span>Sat</span>
+                                            <i data-feather="cloud-rain"></i>
+                                            <span>28°</span>
+                                        </div>
+                                        <div class="day">
+                                            <span>Sun</span>
+                                            <i data-feather="sun"></i>
+                                            <span>31°</span>
+                                        </div>
+                                    </div>
+                                    <div class="current-date-location has-text-centered">
+                                        <span class="date">August 3rd 2020</span>
+                                        <span class="location"> <i data-feather="map-pin"></i> Chennai, IN</span>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        <!-- /Left side column -->
+
+                        <div class="column is-6">
+                            <form method="POST" action="/makePost" enctype = "multipart/form-data">
+                            <div id="compose-card" class="card is-new-content">
+                                <!-- Top tabs -->
+                                <div class="tabs-wrapper">
+                                    <div class="tabs is-boxed is-fullwidth">
+                                        <ul>
+                                            <li class="is-active tab-custom">
+                                                <a>
+                                                    <span class="icon is-small"><i data-feather="edit-3"></i></span>
+                                                    <span>Publish</span>
+                                                </a>
+                                            </li>
+                                            <!-- Close X button -->
+                                            <li class="is-active close-wrap tab-custom">
+                                                <span class="close-publish">
+                                                    <i data-feather="x"></i>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Tab content -->
+                                    <div class="tab-content">
+                                        <!-- Compose form -->
+                                        <div class="compose">
+                                            <div class="compose-form">
+                                                <img src="https://ui-avatars.com/api/?color=fff&background={{ fromUser_color }}&name={{ fromUser }}=36&format=svg" alt="">
+                                                <div class="control">
+                                                    <textarea id="publish" class="textarea" rows="3" placeholder="Write something about you..." name="content_post"></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div id="options-summary" class="options-summary"></div>
+
+                                            <!-- Location suboption -->
+                                            <div id="location-suboption" class="is-autocomplete is-suboption is-hidden">
+                                                <div id="location-autocpl-wrapper" class="control is-location-wrapper has-margin">
+                                                    <input id="location-autocpl" type="text" class="input" placeholder="Where are you now?" name="location_post">
+                                                    <div class="icon">
+                                                        <i data-feather="map-pin"></i>
+                                                    </div>
+                                                    <div class="close-icon is-main">
+                                                        <i data-feather="x"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Link suboption -->
+                                            <div id="link-suboption" class="is-autocomplete is-suboption is-hidden">
+                                                <div id="link-autocpl-wrapper" class="control is-location-wrapper has-margin">
+                                                    <input id="link-autocpl" type="text" class="input" placeholder="Enter the link URL" name="link_post">
+                                                    <div class="icon">
+                                                        <i data-feather="link-2"></i>
+                                                    </div>
+                                                    <div class="close-icon is-main">
+                                                        <i data-feather="x"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- General extended options -->
+                                        <div  class="compose-options">
+                                            <div class="columns is-multiline is-full">
+                                                <!-- Upload action -->
+                                                <div class="column is-6 is-narrower">
+                                                    <div class="compose-option is-centered">
+                                                        <i data-feather="camera"></i>
+                                                        <span>Photo/Video</span>
+                                                        <input type="file" name="media_post">
+                                                    </div>
+                                                </div>
+
+                                                
+                                                <!-- Post location action -->
+                                                <div class="column is-6 is-narrower">
+                                                    <div id="open-location-suboption" class="compose-option is-centered">
+                                                        <i data-feather="map-pin"></i>
+                                                        <span>Post location</span>
+                                                    </div>
+                                                </div>
+                                                <!-- Share link action -->
+                                                <div class="column is-15 is-narrower">
+                                                    <div id="open-link-suboption" style="text-align: center!important;" class="compose-option is-centered">
+                                                        <i data-feather="link-2"></i>
+                                                        <span>Share link</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="more-wrap">
+                                            <button id="publish-button" type="submit" class="button is-solid accent-button is-fullwidth is-disabled">
+                                                Publish
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                                </div>
+                            </div>
+                            <!-- To Display Post  -->
+                            {% include 'blocks/posts.html' %}
+                </div>
+
+                        <div class="column is-3">
+                            <div class="card">
+                                <div class="card-heading is-bordered">
+                                    <h4>Suggested Friends</h4>
+                                </div>
+                                <div class="card-body no-padding">
+                                    <!-- To Display Suggested Friends  -->
+                                    {% include 'blocks/suggested-friends.html' %}                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /Container -->
+
+            <!-- Google places Lib -->
+            <script src="https://maps.google.com/maps/api/js?key=AIzaSyAGLO_M5VT7BsVdjMjciKoH1fFJWWdhDPU&amp;libraries=places"></script>
+        </div>
+
+        <!-- Concatenated js plugins and jQuery -->
+        <script src="static/assets/js/app.js"></script>
+
+        <!-- Core js -->
+        <!-- <script src="static/assets/data/tipuedrop_content.js"></script> -->
+        <script src="static/assets/js/global.js"></script>
+        <script src="static/assets/js/main.js"></script>
+
+        <!-- Page and UI related js -->
+        <script src="static/assets/js/feed.js"></script>
+        <script src="static/assets/js/chat.js"></script>
+        <script src="static/assets/js/inbox.js"></script>
+        <script src="static/assets/js/profile.js"></script>
+        <script src="static/assets/js/friends.js"></script>
+        <script src="static/assets/js/events.js"></script>
+        <script src="static/assets/js/explorer.js"></script>
+        <script src="static/assets/js/news.js"></script>
+        <script src="static/assets/js/questions.js"></script>
+        <script src="static/assets/js/videos.js"></script>
+        <script src="static/assets/js/shop.js"></script>
+        <script src="static/assets/js/settings.js"></script>
+
+        <!-- Components js -->
+        <script src="static/assets/js/widgets.js"></script>
+        <script src="static/assets/js/autocompletes.js"></script>
+        <script src="static/assets/js/modal-uploader.js"></script>
+        <!-- <script src="static/assets/js/popovers-users.js"></script>
+        <script src="static/assets/js/popovers-pages.js"></script> -->
+        <script src="static/assets/js/go-live.js"></script>
+        <script src="static/assets/js/lightbox.js"></script>
+        <script src="static/assets/js/touch.js"></script>
+        <script src="static/assets/js/tour.js"></script>
+        <script>
+            function delay (URL) {
+                setTimeout( function() { window.location = URL }, 2000 );
+            }
+        </script>   
+        <script type="text/javascript">
+            function send_message(post_id) {
+                console.log(post_id)
+                like_text = document.getElementById("like_"+post_id);
+                button_like = document.getElementById("button_"+post_id);
+                button_like.onclick = null;
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    like_text.innerHTML = Number(like_text.innerHTML)+1;
+                    }
+                 }
+                var url = '{{ url_for("like_post") }}?post_id='+post_id;
+                console.log(url)
+                xhttp.open('GET', url, true);
+                xhttp.send();
+            }
+        </script> 
+        <script>
+            function unblur(img){
+                var image = document.getElementById(img);
+                if(image.classList.contains('blur_img')){
+                    image.classList.remove('blur_img');
+                }
+                else{
+                    image.classList.add('blur_img');
+                }
+            }
+        </script>
+    </body>
+
+</html>

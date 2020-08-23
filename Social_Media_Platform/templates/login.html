@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title> Viraly | Login</title>
+    <link rel="icon" type="image/png" href="static/assets/img/favicon.png" />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="static/assets/css/bulma.css">
+    <link rel="stylesheet" href="static/assets/css/app.css">
+    <link rel="stylesheet" href="static/assets/css/core.css">
+</head>
+
+<body class="is-white">
+
+    <!-- Pageloader -->
+    <div class="pageloader"></div>
+    <div class="infraloader is-active"></div>
+    <div class="login-wrapper">
+        
+        <!-- Main Wrapper -->
+        <div class="login-wrapper columns is-gapless">
+            <!--Left Side (Desktop Only)-->
+            <div class="column is-6 is-hidden-mobile hero-banner">
+                <div class="hero is-fullheight is-login">
+                    <div class="hero-body">
+                        <div class="container">
+                            <div class="left-caption">
+                                <h2>Join an Exciting Social Experience.</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Right Side-->
+            <div class="column is-6">
+                <div class="hero form-hero is-fullheight">
+                    <!--Logo-->
+                    <div class="logo-wrap">
+                        <div class="wrap-inner">
+                            <img src="static/assets/img/logo/logo-white.png" alt="">
+                        </div>
+                    </div>
+                    <!--Login Form-->
+                    <div class="hero-body">
+                        <div class="form-wrapper">
+                            <!--Avatar-->
+                            <div class="avatar">
+                                <div class="badge">
+                                    <i data-feather="check"></i>
+                                </div>
+                                <img src="static/assets/img/avatars/placeholder.png" alt="">
+                            </div>
+                            <!--Form-->
+                            <form method="POST">
+                                <div class="login-form">
+                                    <div class="field">
+                                        <div class="control">
+                                            <input class="input email-input" type="text" placeholder="Username" name="username">
+                                            <div class="input-icon">
+                                                <i data-feather="user"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="control">
+                                            <input class="input password-input" type="password" name="password" placeholder="●●●●●●●">
+                                            <div class="input-icon">
+                                                <i data-feather="lock"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="control">
+                                            <button class="button is-solid primary-button raised is-rounded is-fullwidth">Login</button>
+                                        </div>
+                                    </div>
+                                    {% if error %}
+                                        <p class="small" style="color:red;text-align:center;">{{ error }} {% endif %}</p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Concatenated js plugins and jQuery -->
+    <script src="static/assets/js/app.js"></script>
+    
+    <!-- Core js -->
+    <script src="static/assets/data/tipuedrop_content.js"></script>
+    <script src="static/assets/js/global.js"></script>
+    <script src="static/assets/js/main.js"></script>
+</body>
+
+
+</html>

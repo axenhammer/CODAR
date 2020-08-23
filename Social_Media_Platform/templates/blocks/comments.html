@@ -1,0 +1,90 @@
+<!-- Post comments -->
+<div class="comments-wrap is-hidden">
+    <!-- Header -->
+    <div class="comments-heading">
+        <h4>Comments
+            <small>({{post.comments}})</small></h4>
+        <div class="close-comments">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </div>
+    </div>
+    <!-- Header -->
+
+    <!-- Comments body -->
+    <div class="comments-body has-slimscroll">
+        {% for i in range(comment_len) %}
+            {% if post.id == comments[i].post_id %}
+                <!-- Comment -->
+                <div class="media is-comment">
+                    <!-- User image -->
+                    <div class="media-left">
+                        <div class="image">
+                            <img src="https://ui-avatars.com/api/?color=fff&background=000&name={{ comments[i].username }}&size=36&format=svg" data-demo-src="static/assets/img/avatars/gaelle.jpeg" data-user-popover="11" alt="">
+                        </div>
+                    </div>
+                    <!-- Content -->
+                    <div class="media-content">
+                        <a href="#">{{comments[i].fullname}}</a>
+                        <span class="time">@{{comments[i].username}} on {{comments[i].date.strftime('%b %d %Y, %I:%M%p')}}</span>
+                        <p>{{comments[i].content}}</p>
+                        <!-- Comment actions -->
+                        <div class="controls">
+                        </div>
+                    </div>
+                    <!-- Right side dropdown -->
+                    <div class="media-right">
+                        <div class="dropdown is-spaced is-right is-neutral dropdown-trigger">
+                            <div>
+                                <div class="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
+                                </div>
+                            </div>
+                            <div class="dropdown-menu" role="menu">
+                                <div class="dropdown-content">
+                                    <a href="#" class="dropdown-item">
+                                        <div class="media">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-flag"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+                                            <div class="media-content">
+                                                <h3>Report</h3>
+                                                <small>Report this comment.</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Comment -->
+            {% endif %}  
+        {% endfor %}
+    </div>
+    <!-- Comments body -->
+
+    <!-- Comments footer -->
+    <div class="card-footer">
+        <div class="media post-comment">
+            <!-- User image -->
+            <div class="media-left">
+                <p class="image is-48x48">
+                    <img src="https://ui-avatars.com/api/?color=fff&background={{ fromUser_color }}&name={{ fromUser }}=36&format=svg" data-user-popover="0" alt="">
+                </p>
+            </div>
+            <!-- Textarea -->
+            <form method="POST" action="/makeComment" class="media-content">
+                <div class="field">
+                    <p class="control">
+                        <textarea class="textarea comment-textarea" rows="5" name="content_comment" placeholder="Write a comment..." style="display: none;" required></textarea>
+                    </p>
+                    <input type="hidden" value="{{post.id}}" name="post_id" />
+                </div>
+                <!-- Additional actions -->
+                <div class="actions">
+                    <button type="submit" class="button is-solid primary-button raised">Post Comment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- /Comments footer -->
+</div>
+<!-- /Post #3 Comments -->
