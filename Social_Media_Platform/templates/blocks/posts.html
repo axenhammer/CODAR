@@ -1,0 +1,14 @@
+{% for post in posts %}
+    {% if post.content.posttype == "text" %}
+        {% include 'blocks/text-post.html' %}
+    {% endif %}     
+    {% if post.content.posttype == "media" %}
+        {% include 'blocks/media-post.html' %}
+    {% endif %}   
+    {% if post.content.posttype == "link" %}
+        {% include 'blocks/link-post.html' %}
+    {% endif %}   
+    {% if post.content.posttype == "video" %}
+        {% include 'blocks/video-post.html' %}
+    {% endif %}   
+{% endfor %}

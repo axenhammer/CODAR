@@ -1,0 +1,174 @@
+<!-- This is where chat happens 
+ messages-chat.html
+    |
+    |-- messages.html (iframe) 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Automatically Refresh Page Every 5 seconds -->
+    <!-- <meta http-equiv="refresh" content="5"> -->
+
+
+    <title> Viraly | Messenger</title>
+    <link rel="icon" type="image/png" href="static/assets/img/favicon.png" />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="static/assets/css/bulma.css">
+    <link rel="stylesheet" href="static/assets/css/app.css">
+    <link rel="stylesheet" href="static/assets/css/core.css">
+    <style>
+        .chat-wrapper .chat-inner .chat-body .chat-body-inner { padding: 0px 40px 80px 0px; }
+        html {
+            overflow-y: hidden;
+        }
+        .send-button {
+            border: #363636;
+            color: white;
+            padding: 14px;
+            text-align: center;
+            text-decoration: none;
+            background-color:#2478ff; 
+            float: right; 
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-wrapper is-standalone">
+        <div class="chat-inner">
+            <!-- Chat top navigation -->
+            <div class="chat-nav">
+                <div class="nav-start">
+                    <div class="recipient-block">
+                        <div class="avatar-container">
+                            {% if toUser == "support" %}
+                                <img class="user-avatar" src="/static/assets/img/avatars/bob.png" alt="">
+                            {% else %}
+                                <img class="user-avatar" src="https://ui-avatars.com/api/?color=fff&background={{ toUser_color }}&name={{ toUser }}&size=36&format=svg" alt="">
+                            {% endif %}
+                        </div>
+                        <div class="username">
+                            <span>{{fullname}}&nbsp;
+                            {% if toUser == "support" %}
+                                <svg viewBox="0 0 24 24" fill="#2196f3" width="20" height="20" aria-label="Verified account"><g><path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z"></path></g></svg>
+                            {% endif %}
+                            </span>
+                            <span><span>@{{toUser}}</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-end">
+                    <!-- Home Feed icon -->
+                    <div class="dropdown is-spaced is-neutral is-right dropdown-trigger ">
+                        <div>
+                            <a class="chat-nav-item is-icon icon-link is-primary" href="home">
+                                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>                            </a>
+                        </div>
+                    </div>
+                    <!-- Settings icon dropdown -->
+                    <div class="dropdown is-spaced is-neutral is-right dropdown-trigger ">
+                        <div>
+                            <a class="chat-nav-item is-icon icon-link is-primary" href="profile">
+                                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Chat sidebar -->
+            <div id="chat-sidebar" class="users-sidebar">
+                <!-- Header -->
+                <a href="home" class="header-item">
+                    <img src="static/assets/img/favicon.png" alt="">
+                </a>
+                <!-- User list -->
+                <div class="conversations-list has-slimscroll-xs">
+                    <!-- User -->
+                    {% include 'blocks/side-rooms.html' %}
+                </div>
+                <!-- Add Conversation -->
+                <div class="footer-item">
+                    <div class="add-button modal-trigger" data-modal="add-conversation-modal"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Chat body -->
+            <div id="chat-body" class="chat-body">
+                <iframe src="chat?chatID={{chatID}}&toUser={{toUser}}" style="overflow: hidden!important;" scrolling="no" class="chat-body-inner has-slimscroll"></iframe>              
+                <!-- Compose message area -->
+                <div class="chat-action">
+                    <form method="POST" class="chat-action-inner">
+                        <div class="control">
+                            <input type="text" name="message_to_send" style="border-radius: 0px;" class="textarea" required autocomplete="off">
+                        </div>
+                        <input type="submit" value="Submit" class="send-button" style="display: none;"/>
+                        <input type="submit" value="Submit" class="send-button" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="add-conversation-modal" class="modal add-conversation-modal is-xsmall has-light-bg">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="card">
+                <div class="card-heading">
+                    <h3>New Conversation</h3>
+                    <!-- Close X button -->
+                    <div class="close-wrap">
+                        <span class="close-modal">
+                            <i data-feather="x"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <img src="static/assets/img/icons/chat/bubbles.svg" alt="">
+                    <div class="field is-autocomplete">
+                        <div class="control has-icon">
+                            <input type="text" class="input simple-users-autocpl" placeholder="Search a user">
+                            <div class="form-icon">
+                                <i data-feather="search"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="help-text">
+                        Select a user to start a new conversation. You'll be able to add other users later.
+                    </div>
+                    <div class="action has-text-centered">
+                        <button type="button" class="button is-solid accent-button raised">Start conversation</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    function gotoBottom(id){
+        var element = document.getElementById(id);
+        element.scrollTop = element.scrollHeight - element.clientHeight;
+    }
+    var stringToColour = function(str) {
+        var hash = 0;
+        for (var i = 0; i < str.length; i++) {
+            hash = str.charCodeAt(i) + ((hash << 5) - hash);
+        }
+        var colour = '';
+        for (var i = 0; i < 3; i++) {
+            var value = (hash >> (i * 8)) & 0xFF;
+            colour += ('00' + value.toString(16)).substr(-2);
+        }
+        return colour;
+    }
+</script>
+
+</html>

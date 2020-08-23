@@ -1,0 +1,58 @@
+<!-- This is page for the iframe inside messages-chat.html -->
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Automatically Refresh Page Every 5 seconds -->
+    <meta http-equiv="refresh" content="5">
+    <title> Viraly | Standalone Chat</title>
+    <link rel="icon" type="image/png" href="static/assets/img/favicon.png" />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="static/assets/css/bulma.css">
+    <link rel="stylesheet" href="static/assets/css/app.css">
+    <link rel="stylesheet" href="static/assets/css/core.css">
+    <style>
+        .chat-wrapper {background: #f0f0f0 !important;}
+        .chat-wrapper .chat-inner .chat-body .chat-body-inner { padding: 0px 40px 80px 0px; }
+    </style>
+</head>
+
+<body>
+    <div class="chat-wrapper is-standalone">
+        <div class="chat-inner">
+            <div id="chat-body" class="chat-body">
+                <div id="main-conversation" class="chat-body-inner has-slimscroll">
+                    {% for msg in messages %}
+                        {% if msg.author==toUser  %}
+                            <div class="chat-message is-received">
+                                <img src="https://ui-avatars.com/api/?color=fff&background={{ toUser_color }}&name={{ toUser }}&size=36&format=svg" alt="">
+                            
+                        {% else  %}
+                            <div class="chat-message is-sent">
+                                <img src="https://ui-avatars.com/api/?color=fff&background={{ fromUser_color }}&name={{ fromUser }}&size=36&format=svg" alt="">
+                            
+                        {% endif %}
+                        <div class="message-block">
+                            <span>{{ msg.date.strftime('%a, %b %d, %Y @ %I:%M%p') }}</span>
+                            <div class="message-text">{{ msg.content }}</div>
+                        </div></div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function gotoBottom(id){
+        var element = document.getElementById(id);
+        element.scrollTop = element.scrollHeight - element.clientHeight;
+    }
+    gotoBottom("main-conversation");
+</script>
+
+</html>
