@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+
+  "name": "CODAR",
+  "description": "Cyber Offense Detecting and Reporting (CODAR) Framework.",
+  "version": "1.1.0",
+  "icons": { 
+          "96": "logo.png" },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "exclude_matches": ["*://*.google.com/"],
+      "js": ["jquery-3.4.0.min.js", "block.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
