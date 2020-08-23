@@ -1,0 +1,34 @@
+.faqHeader {
+  font-size: 27px;
+  margin: 20px;
+}
+
+.panel-heading [data-toggle="collapse"]:after {
+  font-family: 'FontAwesome';
+  content: "\f078";
+  float: right;
+  color: #b66d00;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.panel-heading [data-toggle="collapse"].collapsed:after {
+  color: #454444;
+}
+
+a {
+  color: #8e5500;
+}
+
+.card.text-white.bg-primary.shadow.bg-secondary:hover {
+  background-color: #464646!important;
+}
+
+.text-primary {
+  color: #5F4C24!important;
+}
+
+.fas.fa-circle.text-primary-1 {
+  color: #0072c6!important;
+}
+
