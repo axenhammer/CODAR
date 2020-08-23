@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>CODAR | Report Filing</title>
+    <link rel="icon" type="image/png" sizes="130x130" href="static/assets/img/logo/bprd-sq.png">
+    <link rel="stylesheet" href="static/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="static/assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="static/assets/css/faq-styles.css">
+    <link rel="stylesheet" href="static/assets/css/main-styles.css">
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0 toggled">
+            <div class="container-fluid d-flex flex-column p-0">
+                <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                    <div class="sidebar-brand-icon"><img src="static/assets/img/logo/bprd-sq.png" style="height:4.6em;"></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="nav navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="index"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="fb-table"><i class="fab fa-facebook"></i><span>Log: Facebook</span></a><a class="nav-link" href="twitter-table"><i class="fab fa-twitter"></i><span>Log: Twitter</span></a>
+                        <a
+                            class="nav-link" href="whatsapp-table"><i class="fab fa-whatsapp"></i><span>Log: Whatsapp</span></a><a class="nav-link" href="viralry-table"><i class="fab fa-rocketchat"></i><span>Log: Viraly</span></a><a class="nav-link" href="sms-table"><i class="fas fa-sms"></i><span>Log: SMS/MMS</span></a></li>
+                </ul>
+                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+            </div>
+        </nav>
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <nav class="navbar navbar-light navbar-expand bg-white shadow mb-3 topbar static-top">
+                    <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button></div>
+                </nav>
+                <div class="container-fluid">
+                    <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                        <h3 class="text-dark mb-0">Detailed Report</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="card shadow mb-3">
+                                <div class="card-header py-3">
+                                    <p class="text-primary m-0 font-weight-bold">User Details</p>
+                                </div>
+                                {% for d in data %}
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col"><center>
+    <iframe id="fb-widget" src=""  width="550" height="600" style="border:none;" allowfullscreen="true" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+</center></div>
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <p><strong>Victim FullName</strong>: {{d.victimFullName}}</p>
+                                                </div>
+                                                <div class="col">
+                                                    <p><strong>Harasser Name</strong>: {{d.harasserName}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <p><strong>Victim Username</strong>: {{d.victimName}}</p>
+                                                </div>
+                                                <div class="col">
+                                                    <p><strong>Platform</strong>: {{d.type}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <p><strong>Victim DOB</strong>: {{d.victimDob}}</p>
+                                                </div>
+                                                <div class="col">
+                                                    <p><strong>Reason</strong>: {{d.reason}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <p><strong>Victim Emailid</strong>: {{d.victimEmail}}</p>
+                                                </div>
+                                                <div class="col">
+                                                    <p><strong>Link</strong>: <a href="{{d.link}}">Link</a></p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <p><strong>Victim Address</strong>: {{d.victimAddress}}</p>
+                                                </div>
+                                                <div class="col">
+                                                    <p><strong>H-Score</strong>: {{d.hscore}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <p><strong>Victim State</strong>: {{d.victimState}}</p>
+                                                </div>
+                                                <div class="col">
+                                                    <p><strong>Post Type</strong>: {{d.post_type}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <p><strong>Victim Zipcode</strong>: {{d.victimPincode}}</p>
+                                                </div>
+                                                <div class="col">
+                                                    <p><strong>Post Text</strong>: {{d.text}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <p><strong>TimeStamp</strong>: {{d.timestamp}}</p>
+                                                </div>
+                                                <div class="col">
+                                                    <p><strong>Text Toxicity</strong>: {{d.text_toxicity}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <p><strong>Status</strong>: {{d.status}}</p>
+                                                </div>
+                                                <div class="col">
+                                                    <p><strong>Image Prediction</strong>: {{d.image_prediction}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card shadow mb-4">
+                                        <div class="card-header py-3">
+                                            <h6 class="text-primary font-weight-bold m-0">Predicted Scores: Text</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <h4 class="small font-weight-bold">Severely Toxic<span class="float-right">20%</span></h4>
+                                            <div class="progress progress-sm mb-3">
+                                                <div class="progress-bar bg-danger" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%;"><span class="sr-only">20%</span></div>
+                                            </div>
+                                            <h4 class="small font-weight-bold">Toxic<span class="float-right">40%</span></h4>
+                                            <div class="progress progress-sm mb-3">
+                                                <div class="progress-bar bg-warning" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;"><span class="sr-only">40%</span></div>
+                                            </div>
+                                            <h4 class="small font-weight-bold">Sexism<span class="float-right">60%</span></h4>
+                                            <div class="progress progress-sm mb-3">
+                                                <div class="progress-bar bg-primary" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"><span class="sr-only">60%</span></div>
+                                            </div>
+                                            <h4 class="small font-weight-bold">Racism<span class="float-right">80%</span></h4>
+                                            <div class="progress progress-sm mb-3">
+                                                <div class="progress-bar bg-info" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"><span class="sr-only">80%</span></div>
+                                            </div>
+                                            <h4 class="small font-weight-bold">Obscene<span class="float-right">80%</span></h4>
+                                            <div class="progress progress-sm mb-3">
+                                                <div class="progress-bar bg-info" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"><span class="sr-only">80%</span></div>
+                                            </div>
+                                            <h4 class="small font-weight-bold">Threat<span class="float-right">100%</span></h4>
+                                            <div class="progress progress-sm mb-3">
+                                                <div class="progress-bar bg-success" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"><span class="sr-only">100%</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card shadow mb-4">
+                                        <div class="card-header py-3">
+                                            <h6 class="text-primary font-weight-bold m-0">Predicted Scores: Image</h6>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <h4 class="small font-weight-bold">Drawing<span class="float-right">{{d.image_prediction[0]*100}}%</span></h4>
+                                            <div class="progress progress-sm mb-3">
+                                            <div class="progress-bar bg-danger" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: {{d.image_prediction[0]*100}}%;"><span class="sr-only">20%</span></div>
+                                            </div>
+                                            <h4 class="small font-weight-bold">Hentai<span class="float-right">{{d.image_prediction[1]*100}}%</span></h4>
+                                            <div class="progress progress-sm mb-3">
+                                                <div class="progress-bar bg-warning" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:  {{d.image_prediction[1]*100}}%;"><span class="sr-only">40%</span></div>
+                                            </div>
+                                            <h4 class="small font-weight-bold">Neutral<span class="float-right">{{d.image_prediction[2]*100}}%</span></h4>
+                                            <div class="progress progress-sm mb-3">
+                                                <div class="progress-bar bg-primary" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:  {{d.image_prediction[2]*100}}%;"><span class="sr-only">60%</span></div>
+                                            </div>
+                                            <h4 class="small font-weight-bold">Porn<span class="float-right">{{d.image_prediction[3]*100}}%</span></h4>
+                                            <div class="progress progress-sm mb-3">
+                                                <div class="progress-bar bg-info" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:  {{d.image_prediction[3]*100}}%;"><span class="sr-only">80%</span></div>
+                                            </div>
+                                            <h4 class="small font-weight-bold">Sexy<span class="float-right">{{d.image_prediction[4]*100}}%</span></h4>
+                                            <div class="progress progress-sm mb-3">
+                                                <div class="progress-bar bg-success" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:  {{d.image_prediction[4]*100}}%;"><span class="sr-only">100%</span></div>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card shadow mb-3">
+                                        <div class="card-header py-3">
+                                            <p class="text-primary m-0 font-weight-bold">Actions</p>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-lg-4"><a class="btn btn-danger btn-icon-split" role="button"><span class="text-white-50 icon"><i class="fas fa-ban"></i></span><span class="text-white text">Proceed Complaint</span></a></div>
+                                                <div class="col"><a class="btn btn-success btn-icon-split" role="button"><span class="text-white-50 icon"><i class="fas fa-check"></i></span><span class="text-white text">Reject Complaint</span></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="bg-white sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"><span>Bureau of Police Research &amp; Development</span></div>
+                </div>
+            </footer>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fa fa-angle-double-up"></i></a></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+    <script src="static/assets/js/indian_cities.js"></script>
+    <script src="static/assets/js/theme.js"></script>
+    <script type="text/javascript">
+        // To Display FB Post, Comments and Videos
+        function display_fb_post(link){
+            var type = "posts"
+            var iframe = document.getElementById("fb-widget");
+             console.log(type)
+            if(type=="posts"){
+                iframe.src = "https://www.facebook.com/plugins/post.php?href="+encodeURIComponent(link)+"&show_text=1&width=550";
+            }
+            else if(type=="videos"){
+                iframe.src = "https://www.facebook.com/plugins/post.php?href="+encodeURIComponent(link)+"&show_text=1&width=550";
+            }
+            else if(type=="comments"){
+                iframe.src = "https://www.facebook.com/plugins/comment_embed.php?href="+encodeURIComponent(link)+"&include_parent=true&width=550&height=550&appId";
+            }
+        }
+        display_fb_post('{{d.image_link}}');
+        {% endfor %}
+    </script>
+    
+</body>
+
+</html>
