@@ -1,0 +1,23 @@
+.center_align{
+    text-align: center;
+}
+
+.margin_top_20{
+    margin-top: 20px;
+}
+
+.margin_top_10{
+    margin-top: 10px;
+}
+
+.bg-info{
+    background-color: #FF5700 !important;
+}
+
+.gradient_bg {
+  background-image: linear-gradient(135deg,#b31217,#ef473a);
+}
+
+.blur_img{
+    filter: blur(0.7rem);
+}

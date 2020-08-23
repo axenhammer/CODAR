@@ -1,0 +1,7 @@
+Werkzeug==1.0.1
+--find-links https://download.pytorch.org/whl/torch_stable.html
+torchvision==0.6.0+cpu
+Flask==1.1.2
+torch==1.5.0+cpu
+Pillow==7.1.2
+gunicorn==20.0.4
