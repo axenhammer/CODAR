@@ -1,0 +1,105 @@
+<!-- For Facebook -->
+{% include 'blocks/index-head-nav.html' %}
+{% include 'blocks/faq-main.html' %}
+{% include 'blocks/user-details.html' %}
+<div class="row">
+    <div class="col">
+        <div class="row">
+            <div class="col">
+                <div class="card shadow mb-3">
+                    <div class="card-header py-3">
+                        <p class="text-primary m-0 font-weight-bold">Facebook Post Preview</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <div class="form-row">
+                                        <div class="col-xl-2">
+                                            <label class="col-form-label">
+                                                <strong>Link to the post</strong>
+                                            </label>
+                                        </div>
+                                        <div class="col-xl-2">
+                                            <select name="fb_content-type" id="fb_type" class="form-control">
+                                                <option value="posts" selected="">Post</option>
+                                                <option value="videos">Video</option>
+                                                <option value="comments">Comment</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <input type="hidden" value="facebook" name="platform">
+                                            <input
+                                                class="form-control"
+                                                type="text"
+                                                placeholder="Ex: https://www.facebook.com/USER_ID/posts/1234567890123456"
+                                                id="fb_link"
+                                                name="fb_link"
+                                            >
+                                            <input type="hidden" value="" name="post_encoded_url" id = "encoded_url">
+                                        </div>
+                                        <div class="col-xl-2">
+                                            <button
+                                                class="btn btn-primary btn-sm"
+                                                onclick="display_fb_post()"
+                                                type="button"
+                                                required
+                                            >Preview</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <div class="form-row">
+                                        <div class="col-xl-2">
+                                            <label class="col-form-label" for="address">
+                                                <strong>Reason</strong>
+                                                <br>
+                                            </label>
+                                        </div>
+                                        <div class="col-xl-8">
+                                            <select name="crime_type" class="form-control">
+                                                <option value="Harrasment" selected>Harrasment and Cyberstalking</option>
+                                                <option value="Impersonation">Impersonation</option>
+                                                <option value="14">Inappropriate Photographs/Videos</option>
+                                                <option value="Masquerading">Masquerading</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <center>
+                                    <iframe
+                                        id="fb-widget"
+                                        src="https://imgur.com/QNDlk2I.jpg"
+                                        width="550"
+                                        height="644"
+                                        style="border:none;"
+                                        allowFullScreen="true"
+                                        frameborder="0"
+                                        allowTransparency="true"
+                                        allow="encrypted-media"
+                                    ></iframe>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("post_push_form").onsubmit =  function(){
+            document.getElementById("encoded_url").value = encodeURIComponent(document.getElementById("fb_link").value)
+            return true;
+        }
+    </script>
+</div>
+{% include 'blocks/contact-details.html' %}                
+{% include 'blocks/index-footer.html' %}

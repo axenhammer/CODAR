@@ -1,0 +1,51 @@
+<!-- For WhatsApp -->
+{% include 'blocks/index-head-nav.html' %}                
+{% include 'blocks/faq-main.html' %}
+{% include 'blocks/user-details.html' %}
+<div class="row">
+    <div class="col">
+        <div class="row">
+            <div class="col">
+                <div class="card shadow mb-3">
+                    <div class="card-header py-3">
+                        <p class="text-primary m-0 font-weight-bold">YouTube Preview</p>
+                    </div>
+                    <div class="card-body">
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="form-row">
+                                            <div class="col-xl-2"><label class="col-form-label"><strong>Link to the YouTube Video</strong></label></div>
+                                            <div class="col-xl-8"><input class="form-control" type="text" placeholder="Ex: https://www.youtube.com/watch?v=1234567890" id="yt_link" name="youtube_link" /></div>
+                                            <div class="col-xl-2"><button class="btn btn-primary btn-sm" onclick="display_youtube()" type="button">Preview</button></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="form-row">
+                                            <div class="col-xl-2"><label class="col-form-label" for="address"><strong>Reason</strong><br /></label></div>
+                                            <div class="col-xl-8"><select name="crime_type" class="form-control"><option value="Harrasment" selected>Harrasment and Cyberstalking</option><option value="Impersonation">Impersonation</option><option value="14">Inappropriate Photographs/Videos</option><option value="Masquerading">Masquerading</option></select></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        <div class="row">
+                            <div class="col">
+                                <input value="youtube" name="platform" type="hidden" /> 
+                                <center><iframe id="youtube-widget-2" src="https://www.youtube.com/embed/QH2-TGUlwu4" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+                            <div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'blocks/contact-details.html' %}                
+{% include 'blocks/index-footer.html' %}

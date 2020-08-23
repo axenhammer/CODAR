@@ -1,0 +1,66 @@
+<!--
+    Jinja Block for collecting User details
+-->
+<div class="row">
+    <div class="col">
+        <div class="card shadow mb-3">
+            <div class="card-header py-3">
+                <p class="text-primary m-0 font-weight-bold">User Details</p>
+            </div>
+            <div class="card-body">
+                <form action="/push" method="POST" enctype="multipart/form-data" id="post_push_form">
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="username">
+                                    <strong>Username</strong>
+                                </label>
+                                <input
+                                    class="form-control"
+                                    type="text"
+                                    placeholder="user.name"
+                                    name="username"
+                                >
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="email">
+                                    <strong>Email Address</strong>
+                                </label>
+                                <input
+                                    class="form-control"
+                                    type="email"
+                                    placeholder="user@example.com"
+                                    name="email"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="first_name">
+                                    <strong>Full Name</strong>
+                                </label>
+                                <input
+                                    class="form-control"
+                                    type="text"
+                                    placeholder="John Doe"
+                                    name="full_name"
+                                >
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="last_name">
+                                    <strong>Date of Birth</strong>
+                                </label>
+                                <input class="form-control" type="date" name="dob">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
