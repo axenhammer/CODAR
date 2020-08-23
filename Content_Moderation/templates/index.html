@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Content Monitoring</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee+Shade">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/Bootstrap-Cards-v2.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/Custom-File-Upload.css') }}">
+</head>
+
+<body class="center m">
+    <div class="gradient_bg">
+        <h1 class="center_align margin_top_20" style="margin-top: 0;padding-top: 50px;color: rgb(255,255,255);font-size: 30px;font-family: 'Bungee Shade', cursive;">SOCIAL MEDIA CONTENT MONITORING</h1>
+        <div class="d-flex justify-content-center align-items-center">
+            <form class="form-inline text-center justify-content-xl-center align-items-xl-center" form method="post" action="/upload" enctype="multipart/form-data">
+                <div style="width: 200px;"><input type="file" id="user_group_logo" class="custom-file-input" name="files[]" multiple="true" autocomplete="off" required>
+                    <div class="text-center"><label id="user_group_label" for="user_group_logo"><i class="fas fa-upload"></i>&nbsp;Choose an image...</label></div>
+                    <div class="text-center mt-2" style="padding-bottom: 50px;"><button class="btn btn-light" type="submit" value="Submit" style="color: rgb(187,28,28);">Upload</button></div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="bootstrap_cards2">
+<div class="container py-5">
+
+
+    <!-- First Row [Prosucts]-->
+    <!-- <h2 class="font-weight-bold mb-2">Analysis of Subreddit - cute_wild_anims</h2>
+    <p class="font-italic text-muted mb-4"></p> -->
+
+    <div class="row pb-5 mb-4">
+
+        {%for i in range(0, posts|length)%}
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 margin_top_20">
+            <!-- Card-->
+            <div class="card rounded shadow-sm border-0">
+                {% set image_url= posts[i]['url']  %}
+                {% set blur="" %}
+                {% set click="" %}
+                {% if posts[i]['status']=="inappropriate" or posts[i]['status']=="warning"  %}
+                    {% set blur="blur_img" %}
+                    {% set ub="unblur("+posts[i]['id']+")" %}
+                    {% set click='onClick='+ub %}
+                {% endif %}
+                <div class="card-body p-4"><img src="{{ url_for('static', filename=image_url) }}" alt="" class="img-fluid d-block mx-auto mb-3 {{blur}}" style="height:200px;" id="{{posts[i]['id']}}" {{click}} >
+                    <h5> <a href="#" class="text-dark">{{ posts[i]['title'] }}</a></h5>
+                    {% if posts[i]['status']=="inappropriate"  %}
+                    <div style="color:#D70000;font-size:15px;"><i class="fas fa-times"></i>  {{ posts[i]['status'] }}</div>
+                    {% endif %}
+                    {% if posts[i]['status']=="warning"  %}
+                    <div style="color:#D74E00;font-size:15px;"><i class="fas fa-exclamation-triangle"></i>  {{ posts[i]['status'] }}</div>
+                    {% endif %}
+                    {% if posts[i]['status']=="careful"  %}
+                    <div style="color:#0B428E;font-size:15px;"><i class="far fa-eye"></i>  {{ posts[i]['status'] }}</div>
+                    {% endif %}
+
+                    {%for j in range(0, posts[i]['classification_result']|length)%}
+                        <p class="small text-muted font-italic margin_top_10">{{ posts[i]['classification_result'][j][0] }} - {{ posts[i]['classification_result'][j][1] }}%</p>
+                        <div class="progress rounded-pill margin_top_10">
+                            <div role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: {{ posts[i]['classification_result'][j][1] }}%;" class="progress-bar bg-info rounded-pill"></div>
+                        </div>
+                    {%endfor%}
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+    </div>
+
+    <script>
+        function unblur(img){
+            var image = document.getElementById(img);
+            if(image.classList.contains('blur_img')){
+                image.classList.remove('blur_img');
+            }
+            else{
+                image.classList.add('blur_img');
+            }
+        }
+    </script>
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
