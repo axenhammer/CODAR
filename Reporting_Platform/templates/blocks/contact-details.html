@@ -1,0 +1,41 @@
+<!--    Jinja Block for collecting Contact details
+-->
+<div class="row">
+   <div class="col">
+      <div class="card shadow">
+         <div class="card-header py-3">
+            <p class="text-primary m-0 font-weight-bold">Contact Details</p>
+         </div>
+         <div class="card-body">
+            <div class="form-row">
+               <div class="col">
+                  <div class="form-group"><label for="address"><strong>Address</strong></label><input class="form-control" type="text" placeholder="Ex: Anna Nagar, Delhi" name="address"></div>
+               </div>
+            </div>
+            <div class="form-row">
+               <div class="col">
+                  <div class="form-group">
+                     <label for="city"><strong>State</strong></label>
+                     <select class="form-control" id="sts" name="state" onchange="print_city(&#39;state&#39;, this.selectedIndex);">
+                        <option value="">Select State</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="col">
+                  <div class="form-group">
+                     <label for="city"><strong>City</strong></label>
+                     <select class="form-control" id="state" name="city">
+                        <option value="">Select City</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="col">
+                  <div class="form-group"><label for="country"><strong>Pin Code</strong></label><input class="form-control" type="text" placeholder="Pin code" name="pincode"></div>
+               </div>
+            </div>
+            <div class="form-group"><button class="btn btn-primary btn-sm" type="submit">Submit Report</button></div>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,77 @@
+<!-- For SMS/MMS -->
+{% include 'blocks/index-head-nav.html' %}                
+{% include 'blocks/faq-main.html' %}
+{% include 'blocks/user-details.html' %}
+<div class="row">
+    <div class="col">
+        <div class="row">
+            <div class="col">
+                <div class="card shadow mb-3">
+                    <div class="card-header py-3">
+                        <p class="text-primary m-0 font-weight-bold">SMS Details</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <div class="form-row">
+                                        <div class="col-xl-2">
+                                            <label class="col-form-label">
+                                                <strong>Sender Number</strong>
+                                            </label>
+                                        </div>
+                                        <div class="col-xl-8">
+                                            <input type="hidden" value="sms" name="platform">
+                                            <input class="form-control" type="text" placeholder="Ex: 7309876543" name="sender_number" >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <div class="form-row">
+                                        <div class="col-xl-2">
+                                            <label class="col-form-label">
+                                                <strong>SMS Message</strong>
+                                            </label>
+                                        </div>
+                                        <div class="col-xl-8">
+                                            <input type="hidden" value="sms" name="platform">
+                                            <input class="form-control" type="text" placeholder="Enter the Message" name="sms_message" >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <div class="form-row">
+                                        <div class="col-xl-2">
+                                            <label class="col-form-label" for="address">
+                                                <strong>Reason</strong>
+                                                <br>
+                                            </label>
+                                        </div>
+                                        <div class="col-xl-8">
+                                            <select name="crime_type" class="form-control">
+                                                <option value="Harrasment" selected>Harrasment and Cyberstalking</option>
+                                                <option value="Impersonation">Impersonation</option>
+                                                <option value="14">Inappropriate Photographs/Videos</option>
+                                                <option value="Masquerading">Masquerading</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'blocks/contact-details.html' %}
+{% include 'blocks/index-footer.html' %}

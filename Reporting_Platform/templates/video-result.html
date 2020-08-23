@@ -1,0 +1,47 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>CODAR | Video Classification</title>
+    <link rel="icon" type="image/png" sizes="130x130" href="static/assets/img/logo/bprd-sq.png">
+    <style type="text/css">
+    .tg  {border-collapse:collapse;border-color:#9ABAD9;border-spacing:0;}
+    .tg td{background-color:#EBF5FF;border-color:#9ABAD9;border-style:solid;border-width:1px;color:#444;
+      font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg th{background-color:#409cff;border-color:#9ABAD9;border-style:solid;border-width:1px;color:#fff;
+      font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg .tg-1wig{font-weight:bold;text-align:left;vertical-align:top}
+    .tg .tg-hmp3{background-color:#D2E4FC;text-align:left;vertical-align:top}
+    @media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;}}</style>
+</head>
+<center>
+  <img src="static/assets/img/logo/bprd.png" />
+  <h1>Video Classification: Result</h1>
+  <iframe id="youtube-widget-2" src="" width="360" height="215" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <div style="padding-top: 25px;" class="tg-wrap"><table class="tg">
+<tbody>
+  <tr>
+    <td class="tg-1wig">Class Names</td>
+    <td class="tg-1wig">Number of Frames</td>
+    <td class="tg-1wig">Percentage (%)</td>
+  </tr>
+  {% for key in temp %}
+  <tr>
+    <td class="tg-hmp3">{{key[0]}}</td>
+    <td class="tg-hmp3">{{key[1]}}</td>
+    <td class="tg-hmp3">{{key[2]}}</td>
+  </tr>
+  {% endfor %}
+    
+</tbody>
+</table></div></center>
+<script>
+    function display_youtube(){
+        var link = "{{ yt_link }}";
+        var iframe = document.getElementById("youtube-widget-2");
+        const regex = /https:\/\/www\.youtube\.com\/watch\?v=[a-zA-Z0-9_-]+/gm;
+        var temp = link.match(regex)[0];
+        var embbedLink = temp.replace("https://www.youtube.com/watch?v=", "https://www.youtube.com/embed/")
+        iframe.src = embbedLink;
+    }
+    display_youtube();
+</script>

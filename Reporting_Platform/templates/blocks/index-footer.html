@@ -1,0 +1,53 @@
+</div>
+</div>
+<footer class="bg-white sticky-footer">
+    <div class="container my-auto">
+        <div class="text-center my-auto copyright">
+            <span>Bureau of Police Research &amp; Development</span>
+        </div>
+    </div>
+</footer>
+</div>
+<a class="border rounded d-inline scroll-to-top" href="#page-top">
+    <i class="fa fa-angle-double-up"></i>
+</a>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+<script src="static/assets/js/indian_cities.js"></script>
+<script src="static/assets/js/theme.js"></script>
+<script type="text/javascript">
+    // To Display FB Post, Comments and Videos
+    function display_fb_post(){
+        var link = document.getElementById("fb_link").value;
+        var type = document.getElementById("fb_type").value;
+        var iframe = document.getElementById("fb-widget");
+        // console.log(type)
+        if(type=="posts"){
+            iframe.src = "https://www.facebook.com/plugins/post.php?href="+encodeURIComponent(link)+"&show_text=1&width=550";
+        }
+        else if(type=="videos"){
+            iframe.src = "https://www.facebook.com/plugins/post.php?href="+encodeURIComponent(link)+"&show_text=1&width=550";
+        }
+        else if(type=="comments"){
+            iframe.src = "https://www.facebook.com/plugins/comment_embed.php?href="+encodeURIComponent(link)+"&include_parent=true&width=550&height=550&appId";
+        }
+    }
+    // To Display tweets
+    function display_tweet(){
+        var link = document.getElementById("tweet_link").value;
+        var iframe = document.getElementById("twitter-widget-2");
+        iframe.src = "https://twitframe.com/show?url="+encodeURIComponent(link);
+    }
+    function display_youtube(){
+        var link = document.getElementById("yt_link").value;
+        var iframe = document.getElementById("youtube-widget-2");
+        const regex = /https:\/\/www\.youtube\.com\/watch\?v=[a-zA-Z0-9_-]+/gm;
+        var temp = link.match(regex)[0];
+        var embbedLink = temp.replace("https://www.youtube.com/watch?v=", "https://www.youtube.com/embed/")
+        iframe.src = embbedLink;
+    }
+</script>
+</body>
+</html>

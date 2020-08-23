@@ -1,0 +1,74 @@
+<!-- For Viraly -->
+{% include 'blocks/index-head-nav.html' %}                
+{% include 'blocks/faq-main.html' %}
+{% include 'blocks/user-details.html' %}
+<div class="row">
+    <div class="col">
+        <div class="row">
+            <div class="col">
+                <div class="card shadow mb-3">
+                    <div class="card-header py-3">
+                        <p class="text-primary m-0 font-weight-bold">Post/Message Preview</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <div class="form-row">
+                                        <div class="col-xl-2">
+                                            <label class="col-form-label">
+                                                <strong>Post/Message ID</strong>
+                                            </label>
+                                        </div>
+                                        <div class="col-xl-2">
+                                            <select name="viraly_content-type" class="form-control">
+                                                <option value="post" selected>Post</option>
+                                                <option value="message">Message</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <input type="hidden" value="viraly" name="platform">
+                                            <input
+                                                class="form-control"
+                                                type="text"
+                                                placeholder="Ex: 100245"
+                                                name="viraly_post_id"
+                                            >
+                                        </div>
+                                        <div class="col-xl-2">
+                                            <button class="btn btn-primary btn-sm" type="button">Check URL</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <div class="form-row">
+                                        <div class="col-xl-2">
+                                            <label class="col-form-label" for="address">
+                                                <strong>Reason</strong>
+                                                <br>
+                                            </label>
+                                        </div>
+                                        <div class="col-xl-8">
+                                            <select name="crime_type" class="form-control">
+                                                <option value="Harrasment" selected>Harrasment and Cyberstalking</option>
+                                                <option value="Impersonation">Impersonation</option>
+                                                <option value="14">Inappropriate Photographs/Videos</option>
+                                                <option value="Masquerading">Masquerading</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'blocks/contact-details.html' %}                
+{% include 'blocks/index-footer.html' %}
