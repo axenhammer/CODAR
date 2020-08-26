@@ -63,12 +63,12 @@ The Software solution that we propose is **Cyber Offense Detecting and Reporting
 1. **`pornography`** - Nudes and pornography images
 2. **`hentai`** - Hentai images, but also includes pornographic drawings
 3. **`sexually_provocative`** - Sexually explicit images, but not pornography. Think semi-nude photos, playboy, bikini, beach volleyball, etc. Considered acceptable by most public social media platforms.
-4. **`neutral`** - Safe for work neutral images of everyday things and people
-5. **`drawing`** - Safe for work drawings (including anime)
+4. **`neutral`** - Safe for work neutral images of everyday things and people.
+5. **`drawing`** - Safe for work drawings (including anime, safe-manga)
 
 
 ### Text Toxicity Prediction
-Our text classification model is built to predict the toxicity of texts to pre-emptively prevent any occurrence of cyberbullying and harassment before they tend to occur. We're using **BERT to overcome the current challenges including understanding the context of text so as to detect sarcasm and cultural references, as it uses Stacked Transformer Encoders and Attention Mechanism to understand the relationship between words and sentences, the context from a given sentence**.  
+Our text classification BERT model is trained on the [Jigsaw Toxic Comment Classification Dataset](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data) to predict the toxicity of texts to pre-emptively prevent any occurrence of cyberbullying and harassment before they tend to occur. We're chose **BERT as to overcome challenges including understanding the context of text so as to detect sarcasm and cultural references, as it uses Stacked Transformer Encoders and Attention Mechanism to understand the relationship between words and sentences, the context from a given sentence**.  
 
 ```
 Text_Input: I want to drug and rape her 
@@ -110,6 +110,11 @@ Action: Text has been blocked.
 | [![f](https://avatars1.githubusercontent.com/u/39209037?s=86)](https://github.com/bearlike) | [![f](https://avatars2.githubusercontent.com/u/40058339?s=86)](https://github.com/mahavisvanathan) | [![f](https://avatars3.githubusercontent.com/u/42212364?s=86)](https://github.com/Vignesh0404) | [![f](https://avatars2.githubusercontent.com/u/43270349?s=86)](https://github.com/nivethaakm99) | 
 | [@bearlike](https://github.com/bearlike) | [@mahavisvanathan](https://github.com/mahavisvanathan) | [@Vignesh0404](https://github.com/Vignesh0404) | [@nivethaakm99](https://github.com/nivethaakm99) |
 
+
+## Acknowledgments
+- Our **[NSFW Image Classification Dataset](https://www.kaggle.com/krishnaalagiri/nsfw-image-classification)** for **Obscene Image Classification**.
+- **[Jigsaw Toxic Comment Classification Dataset](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data)** for the dataset on **Text Toxicity Classification** 
+- Hat tip to anyone whose code was used.
 
 
 ## License
