@@ -19,7 +19,7 @@
 The Software solution that we propose is **Cyber Offense Detecting and Reporting (CODAR) Framework**.
 
 ### What did we use?
-<a href="https://github.com/axenhammer/CODAR/network/dependencies"><img height="42" src="https://imgur.com/rffgZv3.png" /></a>
+<a href="https://github.com/axenhammer/CODAR/network/dependencies"><img height="42" src="https://i.imgur.com/4bUNd79.png" /></a>
 
 ### Prerequisites
 - Python Compiler (3.7 Recommended)
@@ -48,7 +48,7 @@ The Software solution that we propose is **Cyber Offense Detecting and Reporting
 - Add credentails for your MySQL, Twitter API and MongoDB into the Flask Apps. Also, Import our Dashboard JSON into your Grafana Server and configure your data sources accordingly. 
 
 
-### Image Classification
+### Obscene Image Classification 📷
 :star::star::star: We have made our **[NSFW Image Classification Dataset](https://www.kaggle.com/krishnaalagiri/nsfw-image-classification)** public and we have used the same. Our classification model for Content Moderation in Social Media Platforms are trained over 330,000 images on a pretrained RESNET50 in five “loosely defined” categories:
 1. **`pornography`** - Nudes and pornography images
 2. **`hentai`** - Hentai images, but also includes pornographic drawings
@@ -57,7 +57,7 @@ The Software solution that we propose is **Cyber Offense Detecting and Reporting
 5. **`drawing`** - Safe for work drawings (including anime, safe-manga)
 
 
-### Text Toxicity Prediction
+### Text Toxicity Prediction 💬
 Our text classification BERT model is trained on the **[Jigsaw Toxic Comment Classification Dataset](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data)** to predict the toxicity of texts to pre-emptively prevent any occurrence of cyberbullying and harassment before they tend to occur. We're chose **BERT as to overcome challenges including understanding the context of text so as to detect sarcasm and cultural references, as it uses Stacked Transformer Encoders and Attention Mechanism to understand the relationship between words and sentences, the context from a given sentence**.  
 
 ```
@@ -75,21 +75,21 @@ Action: Text has been blocked.
 
 ```
 
-## Screenshots 
+## Screenshots (Click images for Full Resolution 🎯)
 
 | Confusion Matrix (91% Overall Accuracy) | Finding the NSFW composition of a YouTube video |
 |------|-----|
-| ![f](https://imgur.com/zppAC3S.jpg) | ![f](https://imgur.com/Mm3m4H3.gif) |
+| ![f](https://imgur.com/zppAC3S.jpg) | [![f](https://imgur.com/Mm3m4H3.gif)](https://i.imgur.com/8r8Zw0w.gif) |
 | **Tested on more than 23,000 unseen images.** | **Downloads the video, Find the NSFW composition by classifing it's Keyframes** |
 
 | Realtime Tweet Toxicity prediction | Testing the models by integerating with own Social Media Platform |
 |------------------------------------|-------------------------------------------------------------------|
-| ![f](https://imgur.com/iQWxioB.gif) | ![f](https://imgur.com/Sv9koRs.gif) |
+| [![f](https://imgur.com/iQWxioB.gif)](https://i.imgur.com/gINYc5i.jpg) | [![f](https://imgur.com/Sv9koRs.gif)](https://i.imgur.com/ivy2HRs.gif) |
 | **We love Grafana** | **Automatically hides NSFW content while showing a disclaimer for the same** |
 
 | Reporting Portal for the public to report content | Chrome Extension to automatically block offensive content |
 |------------------------------------|-------------------------------------------------------------------|
-| ![f](https://imgur.com/0mWzEp6.gif) | ![f](https://imgur.com/jEM67si.gif) |
+| [![f](https://imgur.com/0mWzEp6.gif)](https://i.imgur.com/bscylSA.gif) | [![f](https://imgur.com/jEM67si.gif)](https://i.imgur.com/IeBvtGs.gif) |
 | **The reporting portal is attached to a dashboard that automates the moderation process** ||
 
 
