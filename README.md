@@ -19,17 +19,7 @@
 The Software solution that we propose is **Cyber Offense Detecting and Reporting (CODAR) Framework**.
 
 ### What did we use?
-<img height="32" width="32" src="https://cdn.thekrishna.in/img/icon/python.svg" />&nbsp;
-<img height="32" width="32" src="https://cdn.thekrishna.in/img/icon/pytorch.svg" />&nbsp;
-<img height="32" width="32" src="https://unpkg.com/simple-icons@v3/icons/flask.svg" />&nbsp;
-<img height="32" width="32" src="https://cdn.thekrishna.in/img/icon/opencv.svg" />&nbsp; 
-<img height="32" width="32" src="https://cdn.thekrishna.in/img/icon/docker.svg" />&nbsp; 
-<img height="32" width="32" src="https://cdn.thekrishna.in/img/icon/grafana.svg" />&nbsp; 
-<img height="32" width="32" src="https://cdn.thekrishna.in/img/icon/mongodb.svg" />&nbsp; 
-<img height="32" width="32" src="https://cdn.thekrishna.in/img/icon/mysql.svg" />&nbsp; 
-<img height="32" width="32" src="https://cdn.thekrishna.in/img/icon/javascript.svg" />&nbsp; 
-<img height="32" width="32" src="https://cdn.thekrishna.in/img/icon/html5.svg" />&nbsp; 
-<img height="32" width="32" src="https://cdn.thekrishna.in/img/icon/css3.svg" />&nbsp; 
+<a href="https://github.com/axenhammer/CODAR/network/dependencies"><img height="42" src="https://imgur.com/rffgZv3.png" /></a>
 
 ### Prerequisites
 - Python Compiler (3.7 Recommended)
@@ -52,7 +42,7 @@ The Software solution that we propose is **Cyber Offense Detecting and Reporting
       docker run -d -t -p 27017:27017 --name mongodb mongo
       docker run --name grafana -d -p 3000:3000 grafana/grafana
       # Runs MySQL server with port 3306 exposed and root password '0000' 
-      docker run --name mysql -e MYSQL_ROOT_PASSWORD="0000" -p 3306:3306 -d mysq
+      docker run --name mysql -e MYSQL_ROOT_PASSWORD="0000" -p 3306:3306 -d mysql
       ```
 - A clone of this repository :P
 - Add credentails for your MySQL, Twitter API and MongoDB into the Flask Apps. Also, Import our Dashboard JSON into your Grafana Server and configure your data sources accordingly. 
@@ -68,7 +58,7 @@ The Software solution that we propose is **Cyber Offense Detecting and Reporting
 
 
 ### Text Toxicity Prediction
-Our text classification BERT model is trained on the [Jigsaw Toxic Comment Classification Dataset](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data) to predict the toxicity of texts to pre-emptively prevent any occurrence of cyberbullying and harassment before they tend to occur. We're chose **BERT as to overcome challenges including understanding the context of text so as to detect sarcasm and cultural references, as it uses Stacked Transformer Encoders and Attention Mechanism to understand the relationship between words and sentences, the context from a given sentence**.  
+Our text classification BERT model is trained on the **[Jigsaw Toxic Comment Classification Dataset](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data)** to predict the toxicity of texts to pre-emptively prevent any occurrence of cyberbullying and harassment before they tend to occur. We're chose **BERT as to overcome challenges including understanding the context of text so as to detect sarcasm and cultural references, as it uses Stacked Transformer Encoders and Attention Mechanism to understand the relationship between words and sentences, the context from a given sentence**.  
 
 ```
 Text_Input: I want to drug and rape her 
