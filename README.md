@@ -80,17 +80,17 @@ Action: Text has been blocked.
 | Confusion Matrix (91% Overall Accuracy) | Finding the NSFW composition of a YouTube video |
 |------|-----|
 | ![f](https://imgur.com/zppAC3S.jpg) | [![f](https://imgur.com/Mm3m4H3.gif)](https://i.imgur.com/8r8Zw0w.gif) |
-| **Tested on more than 23,000 unseen images.** | **Downloads the video, Find the NSFW composition by classifing it's Keyframes** |
+| **Tested on more than 23,000 unseen images.** | **Downloads the video, Find the NSFW composition using it's Keyframes** |
 
 | Realtime Tweet Toxicity prediction | Testing the models by integerating with own Social Media Platform |
 |------------------------------------|-------------------------------------------------------------------|
 | [![f](https://imgur.com/iQWxioB.gif)](https://i.imgur.com/gINYc5i.jpg) | [![f](https://imgur.com/Sv9koRs.gif)](https://i.imgur.com/ivy2HRs.gif) |
-| **We love Grafana** | **Automatically hides NSFW content while showing a disclaimer for the same** |
+| **We love Grafana** | **Automatically hides NSFW content also shows a disclaimer** |
 
 | Reporting Portal for the public to report content | Chrome Extension to automatically block offensive content |
 |------------------------------------|-------------------------------------------------------------------|
 | [![f](https://imgur.com/0mWzEp6.gif)](https://i.imgur.com/bscylSA.gif) | [![f](https://imgur.com/jEM67si.gif)](https://i.imgur.com/IeBvtGs.gif) |
-| **The reporting portal is attached to a dashboard that automates the moderation process** ||
+| **The reporting portal with a dashboard to semi-automate the moderation process** ||
 
 
 ## Contributors
