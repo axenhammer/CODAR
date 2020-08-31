@@ -22,6 +22,16 @@ The Software solution that we propose is **Cyber Offense Detecting and Reporting
 <a href="https://github.com/axenhammer/CODAR/network/dependencies"><img height="42" src="https://i.imgur.com/4bUNd79.png" /></a>
 
 ### Prerequisites
+
+<details>
+  <summary>Expand for running CODAR on <b>Raspberry Pi</b> or other <b>SBCs</b></summary>
+  
+- If you're intending to run a SBC, we'd recommend atleast a **Raspberry Pi 4 (4GB)** 
+  - Preferably running [Raspberry Pi OS Lite](https://www.raspberrypi.org/downloads/raspberry-pi-os/) from an USB 3.0 Drive and **increase the swap size**
+  - Follow this to install **[PyTorch on RPi 4](https://gist.github.com/akaanirban/621e63237e63bb169126b537d7a1d979)**
+  
+ </details> 
+  
 - Python Compiler (3.7 Recommended)
   - ```bash
     sudo apt update
