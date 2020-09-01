@@ -78,7 +78,7 @@ Action: Text has been blocked.
 
 <ul><li><details>
 <summary>Expand for running CODAR on <b>Raspberry Pi</b> or other <b>SBCs</b></summary>
-<ul><li>We&#39;d recommend atleast a <strong>Raspberry Pi 4 (4GB)</strong> preferably running <a href="https://www.raspberrypi.org/downloads/raspberry-pi-os/">Raspberry Pi OS Lite</a> from an USB 3.0 Drive and <strong>increase the swap size</strong></li>
+<ul><li>We&#39;d recommend <strong>Raspberry Pi 4 (4GB)</strong> running <a href="https://www.raspberrypi.org/downloads/raspberry-pi-os/">Raspberry Pi OS Lite</a> and <strong>increase the swap size</strong></li>
 <li>Follow this to install <strong><a href="https://gist.github.com/akaanirban/621e63237e63bb169126b537d7a1d979">PyTorch on RPi 4</a></strong></li>
 </ul></li></ul></details></li></ul>
   
