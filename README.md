@@ -48,6 +48,24 @@ pip <span class="hljs-keyword">install</span> -r Reporting_Platform/requirements
 </li>
 <li>For installation of <a href="https://pytorch.org/">PyTorch</a>, refer their official website. </li>
 </ul>
+</li>
+<li><p>A MongoDB Server, Grafana Sever, MySQL Server, and <a href="https://developer.twitter.com/en/apps">access to Twitter API</a> </p>
+<ul>
+<li>If you have Docker, you can use the below commands to quickly start a clean MySQL, Grafana and MongoDB Server<ul>
+<li><pre><code class="lang-bash">docker <span class="hljs-keyword">run</span><span class="bash"> <span class="hljs-_">-d</span> -t -p 27017:27017 --name mongodb mongo
+</span>docker <span class="hljs-keyword">run</span><span class="bash"> --name grafana <span class="hljs-_">-d</span> -p 3000:3000 grafana/grafana
+</span><span class="hljs-comment"># Runs MySQL server with port 3306 exposed and root password '0000' </span>
+docker <span class="hljs-keyword">run</span><span class="bash"> --name mysql <span class="hljs-_">-e</span> MYSQL_ROOT_PASSWORD=<span class="hljs-string">"0000"</span> -p 3306:3306 <span class="hljs-_">-d</span> mysql</span>
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Add credentails for your MySQL, Twitter API and MongoDB into the Flask Apps. Also, Import our Dashboard JSON into your Grafana Server and configure your data sources accordingly. </p>
+</li>
+</ul>
+
 
 ### Key Features :star:
 - [X] Finds the NSFW composition of a given YouTube video
