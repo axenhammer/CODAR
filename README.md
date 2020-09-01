@@ -20,15 +20,14 @@ The Software solution that we propose is **Cyber Offense Detecting and Reporting
 ### What did we use?
 <a href="https://github.com/axenhammer/CODAR/network/dependencies"><img height="42" src="https://i.imgur.com/4bUNd79.png" /></a>
 
-
 ### Key Features :star:
-- [X] Finds the NSFW composition of a given YouTube video
-- [X] Perform Text Toxicity Prediction on Publically Post/Comment information using BeautifulSoup and Facebook API
-- [X] Structures and Perform Text Toxicity Prediction on WhatsApp Chat Export Documents.
-- [X] Realtime Toxicity Prediction on Tweets.
-- [X] Chrome Extension to automatically block offensive content
-- [X] Reporting Portal for the public to report content.
-- [X] A custom Social Media Platform to test the capablities of this system.
+- [X] Finds the **NSFW composition** of a given **YouTube video**
+- [X] Perform **Text Toxicity Prediction** on **Publically available Facebook Post/Comment** information using BeautifulSoup and Facebook API
+- [X] Structures and Perform **Text Toxicity Prediction** on **WhatsApp Chat Export Documents**.
+- [X] **Visualise Realtime Toxicity Scored on Tweets** using Grafana.
+- [X] **Chrome Extension** to automatically **block offensive content**
+- [X] **Reporting Portal** for the public to report content.
+- [X] A **custom Social Media Platform** to test the capablities of this system.
 
 
 ### Obscene Image Classification 📷
