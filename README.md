@@ -20,52 +20,6 @@ The Software solution that we propose is **Cyber Offense Detecting and Reporting
 ### What did we use?
 <a href="https://github.com/axenhammer/CODAR/network/dependencies"><img height="42" src="https://i.imgur.com/4bUNd79.png" /></a>
 
-### Prerequisites
-
-<details>
-  <summary>Expand for running CODAR on <b>Raspberry Pi</b> or other <b>SBCs</b></summary>
-  
-- If you're intending to run a SBC, we'd recommend atleast a **Raspberry Pi 4 (4GB)** 
-  - Preferably running [Raspberry Pi OS Lite](https://www.raspberrypi.org/downloads/raspberry-pi-os/) from an USB 3.0 Drive and **increase the swap size**
-  - Follow this to install **[PyTorch on RPi 4](https://gist.github.com/akaanirban/621e63237e63bb169126b537d7a1d979)**
-  
- </details> 
-  
-<details>
-  <summary>Python Compiler (3.7 Recommended)</summary>
-  <pre>sudo apt update
-sudo apt install -y software-properties-common
-sudo apt install -y python3 python3-pip</pre>
-</details>   
-
-<ul>
-<li>Necessary Python3 Libraries for CODAR can be installed by running the following command:<ul>
-<li><pre><code class="lang-bash">sudo apt <span class="hljs-keyword">install</span> -y python3-opencv
-pip <span class="hljs-keyword">install</span> -r Social_Media_Platform/requirements.txt
-pip <span class="hljs-keyword">install</span> -r Content_Moderation/requirements.txt
-pip <span class="hljs-keyword">install</span> -r Reporting_Platform/requirements.txt
-</code></pre>
-</li>
-<li>For installation of <a href="https://pytorch.org/">PyTorch</a>, refer their official website. </li>
-</ul>
-</li>
-<li><p>A MongoDB Server, Grafana Sever, MySQL Server, and <a href="https://developer.twitter.com/en/apps">access to Twitter API</a> </p>
-<ul>
-<li>If you have Docker, you can use the below commands to quickly start a clean MySQL, Grafana and MongoDB Server<ul>
-<li><pre><code class="lang-bash">docker <span class="hljs-keyword">run</span><span class="bash"> <span class="hljs-_">-d</span> -t -p 27017:27017 --name mongodb mongo
-</span>docker <span class="hljs-keyword">run</span><span class="bash"> --name grafana <span class="hljs-_">-d</span> -p 3000:3000 grafana/grafana
-</span><span class="hljs-comment"># Runs MySQL server with port 3306 exposed and root password '0000' </span>
-docker <span class="hljs-keyword">run</span><span class="bash"> --name mysql <span class="hljs-_">-e</span> MYSQL_ROOT_PASSWORD=<span class="hljs-string">"0000"</span> -p 3306:3306 <span class="hljs-_">-d</span> mysql</span>
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Add credentails for your MySQL, Twitter API and MongoDB into the Flask Apps. Also, Import our Dashboard JSON into your Grafana Server and configure your data sources accordingly. </p>
-</li>
-</ul>
-
 
 ### Key Features :star:
 - [X] Finds the NSFW composition of a given YouTube video
@@ -120,6 +74,40 @@ Action: Text has been blocked.
 |------------------------------------|-------------------------------------------------------------------|
 | [![f](https://imgur.com/0mWzEp6.gif)](https://i.imgur.com/bscylSA.gif) | [![f](https://imgur.com/jEM67si.gif)](https://i.imgur.com/IeBvtGs.gif) |
 | **The reporting portal with a dashboard to semi-automate the moderation process** ||
+
+
+### Prerequisites
+
+<ul><li><details>
+<summary>Expand for running CODAR on <b>Raspberry Pi</b> or other <b>SBCs</b></summary>
+<ul><li>We&#39;d recommend atleast a <strong>Raspberry Pi 4 (4GB)</strong> preferably running <a href="https://www.raspberrypi.org/downloads/raspberry-pi-os/">Raspberry Pi OS Lite</a> from an USB 3.0 Drive and <strong>increase the swap size</strong></li>
+<li>Follow this to install <strong><a href="https://gist.github.com/akaanirban/621e63237e63bb169126b537d7a1d979">PyTorch on RPi 4</a></strong></li>
+</ul></li></ul></details></li></ul>
+  
+- Python Compiler (3.7 Recommended)
+  - ```bash
+    sudo apt update
+    sudo apt install -y software-properties-common
+    sudo apt install -y python3 python3-pip
+    ```
+- Necessary Python3 Libraries for CODAR can be installed by running the following command:
+  - ```bash
+    sudo apt install -y python3-opencv
+    pip install -r Social_Media_Platform/requirements.txt
+    pip install -r Content_Moderation/requirements.txt
+    pip install -r Reporting_Platform/requirements.txt
+    ```
+  - For installation of [PyTorch](https://pytorch.org/), refer their official website. 
+ - A MongoDB Server, Grafana Sever, MySQL Server, and [access to Twitter API](https://developer.twitter.com/en/apps) 
+  - If you have Docker, you can use the below commands to quickly start a clean MySQL, Grafana and MongoDB Server
+    - ```bash
+      docker run -d -t -p 27017:27017 --name mongodb mongo
+      docker run --name grafana -d -p 3000:3000 grafana/grafana
+      # Runs MySQL server with port 3306 exposed and root password '0000' 
+      docker run --name mysql -e MYSQL_ROOT_PASSWORD="0000" -p 3306:3306 -d mysql
+      ```
+- Add credentails for your MySQL, Twitter API and MongoDB into the Flask Apps. Also, Import our Dashboard JSON into your Grafana Server and configure your data sources accordingly. 
+
 
 
 ## Contributors
