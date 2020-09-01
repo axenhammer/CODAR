@@ -38,24 +38,16 @@ sudo apt install -y software-properties-common
 sudo apt install -y python3 python3-pip</pre>
 </details>   
 
-- Necessary Python3 Libraries for CODAR can be installed by running the following command:
-  - ```bash
-    sudo apt install -y python3-opencv
-    pip install -r Social_Media_Platform/requirements.txt
-    pip install -r Content_Moderation/requirements.txt
-    pip install -r Reporting_Platform/requirements.txt
-    ```
-  - For installation of [PyTorch](https://pytorch.org/), refer their official website. 
-- A MongoDB Server, Grafana Sever, MySQL Server, and [access to Twitter API](https://developer.twitter.com/en/apps) 
-  - If you have Docker, you can use the below commands to quickly start a clean MySQL, Grafana and MongoDB Server
-    - ```bash
-      docker run -d -t -p 27017:27017 --name mongodb mongo
-      docker run --name grafana -d -p 3000:3000 grafana/grafana
-      # Runs MySQL server with port 3306 exposed and root password '0000' 
-      docker run --name mysql -e MYSQL_ROOT_PASSWORD="0000" -p 3306:3306 -d mysql
-      ```
-      
-- Add credentails for your MySQL, Twitter API and MongoDB into the Flask Apps. Also, Import our Dashboard JSON into your Grafana Server and configure your data sources accordingly. 
+<ul>
+<li>Necessary Python3 Libraries for CODAR can be installed by running the following command:<ul>
+<li><pre><code class="lang-bash">sudo apt <span class="hljs-keyword">install</span> -y python3-opencv
+pip <span class="hljs-keyword">install</span> -r Social_Media_Platform/requirements.txt
+pip <span class="hljs-keyword">install</span> -r Content_Moderation/requirements.txt
+pip <span class="hljs-keyword">install</span> -r Reporting_Platform/requirements.txt
+</code></pre>
+</li>
+<li>For installation of <a href="https://pytorch.org/">PyTorch</a>, refer their official website. </li>
+</ul>
 
 ### Key Features :star:
 - [X] Finds the NSFW composition of a given YouTube video
