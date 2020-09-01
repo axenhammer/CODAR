@@ -11,12 +11,11 @@
 ## Problem Statement
 - Cyber bullying involves **posting, sharing wrong, private, negative, harmful information** about victim. In today's digital world we see many such instances where a particular person is targeted. We are looking for the software solution to curb such bullying/harassment in cyber space. Such solution is expected to 
   1. Work on **social media** such as twitter, facebook,etc.;. 
-  2. Should provide **alarm to authority** 
-  3. Facility to **report such incidents** to authority.
+  2. Facility to **flag and report such incidents** to authority.
 
 
 ## Getting Started
-The Software solution that we propose is **Cyber Offense Detecting and Reporting (CODAR) Framework**.
+The Software solution that we propose is **Cyber Offense Detecting and Reporting (CODAR) Framework**, A system that semi-automates the Internet Moderation Process.
 
 ### What did we use?
 <a href="https://github.com/axenhammer/CODAR/network/dependencies"><img height="42" src="https://i.imgur.com/4bUNd79.png" /></a>
@@ -32,12 +31,13 @@ The Software solution that we propose is **Cyber Offense Detecting and Reporting
   
  </details> 
   
-- Python Compiler (3.7 Recommended)
-  - ```bash
-    sudo apt update
-    sudo apt install -y software-properties-common
-    sudo apt install -y python3 python3-pip
-    ```
+<details>
+  <summary>Python Compiler (3.7 Recommended)</summary>
+  <pre>sudo apt update
+sudo apt install -y software-properties-common
+sudo apt install -y python3 python3-pip</pre>
+</details>   
+
 - Necessary Python3 Libraries for CODAR can be installed by running the following command:
   - ```bash
     sudo apt install -y python3-opencv
@@ -46,7 +46,7 @@ The Software solution that we propose is **Cyber Offense Detecting and Reporting
     pip install -r Reporting_Platform/requirements.txt
     ```
   - For installation of [PyTorch](https://pytorch.org/), refer their official website. 
- - A MongoDB Server, Grafana Sever, MySQL Server, and [access to Twitter API](https://developer.twitter.com/en/apps) 
+- A MongoDB Server, Grafana Sever, MySQL Server, and [access to Twitter API](https://developer.twitter.com/en/apps) 
   - If you have Docker, you can use the below commands to quickly start a clean MySQL, Grafana and MongoDB Server
     - ```bash
       docker run -d -t -p 27017:27017 --name mongodb mongo
@@ -54,8 +54,17 @@ The Software solution that we propose is **Cyber Offense Detecting and Reporting
       # Runs MySQL server with port 3306 exposed and root password '0000' 
       docker run --name mysql -e MYSQL_ROOT_PASSWORD="0000" -p 3306:3306 -d mysql
       ```
-- A clone of this repository :P
+      
 - Add credentails for your MySQL, Twitter API and MongoDB into the Flask Apps. Also, Import our Dashboard JSON into your Grafana Server and configure your data sources accordingly. 
+
+### Key Features :star:
+- [X] Finds the NSFW composition of a given YouTube video
+- [X] Perform Text Toxicity Prediction on Publically Post/Comment information using BeautifulSoup and Facebook API
+- [X] Structures and Perform Text Toxicity Prediction on WhatsApp Chat Export Documents.
+- [X] Realtime Toxicity Prediction on Tweets.
+- [X] Chrome Extension to automatically block offensive content
+- [X] Reporting Portal for the public to report content.
+- [X] A custom Social Media Platform to test the capablities of this system.
 
 
 ### Obscene Image Classification 📷
