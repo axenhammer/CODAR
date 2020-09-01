@@ -7,7 +7,6 @@
 </p>
 
 
-
 ## Problem Statement
 - Cyber bullying involves **posting, sharing wrong, private, negative, harmful information** about victim. In today's digital world we see many such instances where a particular person is targeted. We are looking for the software solution to curb such bullying/harassment in cyber space. Such solution is expected to 
   1. Work on **social media** such as twitter, facebook,etc.;. 
@@ -22,7 +21,7 @@ The Software solution that we propose is **Cyber Offense Detecting and Reporting
 
 ### Key Features :star:
 - [X] Finds the **NSFW composition** of a given **YouTube video**
-- [X] Perform **Text Toxicity Prediction** on **Publically available Facebook Post/Comment** information using BeautifulSoup and Facebook API
+- [X] Perform **Text Toxicity Prediction** on public **Facebook Posts/Comments** using BeautifulSoup and Facebook API.
 - [X] Structures and Perform **Text Toxicity Prediction** on **WhatsApp Chat Export Documents**.
 - [X] **Visualise Realtime Toxicity Scored on Tweets** using Grafana.
 - [X] **Chrome Extension** to automatically **block offensive content**
