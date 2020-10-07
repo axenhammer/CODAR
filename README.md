@@ -117,7 +117,7 @@ Action: Text has been blocked.
 
 
 ## Acknowledgments
-- Our **[NSFW Image Classification Dataset](https://www.kaggle.com/krishnaalagiri/nsfw-image-classification)** for **Obscene Image Classification**.
+- Our **[NSFW Image Classification Dataset](https://www.kaggle.com/dataset/360fbfce26b59056e60d5e9cd1cfa884c2d66c5b6f3b350254651cd136a41322)** for **Obscene Image Classification**.
 - **[Jigsaw Toxic Comment Classification Dataset](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data)** for the dataset on **Text Toxicity Classification** 
 - Hat tip to anyone whose code was used.
 
