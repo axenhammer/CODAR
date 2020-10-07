@@ -30,7 +30,7 @@ The Software solution that we propose is **Cyber Offense Detecting and Reporting
 
 -----
 ### Obscene Image Classification 📷
-:star::star::star: We have made our **[NSFW Image Classification Dataset](https://www.kaggle.com/krishnaalagiri/nsfw-image-classification)** public and we have used the same. Our classification model for Content Moderation in Social Media Platforms are trained over 330,000 images on a pretrained RESNET50 in five “loosely defined” categories:
+:star::star::star: We have made our **[NSFW Image Classification Dataset](www.kaggle.com/dataset/360fbfce26b59056e60d5e9cd1cfa884c2d66c5b6f3b350254651cd136a41322)** accessible through Kaggle Link-Sharing and we have used the same. Our classification model for Content Moderation in Social Media Platforms are trained over 330,000 images on a pretrained RESNET50 in five “loosely defined” categories:
 1. **`pornography`** - Nudes and pornography images
 2. **`hentai`** - Hentai images, but also includes pornographic drawings
 3. **`sexually_provocative`** - Sexually explicit images, but not pornography. Think semi-nude photos, playboy, bikini, beach volleyball, etc. Considered acceptable by most public social media platforms.
